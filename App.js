@@ -20,6 +20,8 @@ import {
   TouchableOpacity
 } from 'react-native';
 
+import LinearGradient from 'react-native-linear-gradient';
+
 import {
   Header,
   LearnMoreLinks,
@@ -47,21 +49,21 @@ const App = () => {
             alignItems: 'center',
             borderRadius: 20
           }}>
-            <View style={{ flex: 1, alignItems: 'center', marginTop: '10%', }}>
+            <View style={{ flex: 1, padding: 15, alignItems: 'center', marginLeft: '15%', marginRight: '15%', marginTop: '10%', }}>
               <View>
                 <Text style={{ color: 'black', fontSize: 40, fontWeight: 'bold' }}> Welcome Back</Text>
               </View>
               <View>
                 <Text style={{ color: 'gray', fontSize: 15, fontWeight: 'bold' }}>Login to your account</Text>
               </View>
-              <View style={{ marginLeft: '15%', marginTop: '15%' }}>
-                <View>
+              <View style={{ marginTop: '15%' }}>
+                <View style={{ backgroundColor: '#BBBBBB', borderRadius: 21 }}>
                   <TextInput style={styles.textInput}
                     placeHolderStyle={styles.placeHolderStyle}
                     underlineColorAndroid="transparent"
                     placeholder="Email" />
                 </View>
-                <View>
+                <View style={{ marginTop: '5%', backgroundColor: '#BBBBBB', borderRadius: 21 }}>
                   <TextInput style={styles.textInput}
                     placeHolderStyle={styles.placeHolderStyle}
                     underlineColorAndroid="transparent"
@@ -71,26 +73,31 @@ const App = () => {
               </View>
               <View style={{ marginTop: '15%' }}>
                 <TouchableOpacity>
-                  <View style={{
-                    padding: 15, width: widthDevice / 1.1,
+                  <LinearGradient style={{
+                    borderRadius: 21,
+                    padding: 10, width: widthDevice / 1.1,
                     alignItems: 'center',
-                    backgroundColor: '#FF9900',
-                    borderRadius: 10
-                  }}>
-                    <Text>Login</Text>
-                  </View>
+                    backgroundColor: 'orange'
+                  }}
+                    colors={['#FF2730', '#FF8B3B']}
+                    start={{ x: 0, y: 0 }}
+                    end={{ x: 1, y: 0 }}
+                  >
+
+                    <Text style={{ fontWeight: 'bold', fontSize: 20 }}>Login</Text>
+                  </LinearGradient>
                 </TouchableOpacity>
               </View>
               <View style={{ marginTop: '5%' }}>
-                <Text style={{ fontWeight: 'bold', fontSize: 20, color: 'grey', height: 40 }}>Forgot your password ?</Text>
+                <Text style={{ fontWeight: 'bold', fontSize: 15, color: 'grey', height: 40 }}>Forgot your password ?</Text>
               </View>
-              <View style={{ width: widthDevice / 2, marginTop: '15%', flexDirection: 'row' }}>
-                <Text style={{ fontWeight: 'bold', fontSize: 15, color: 'grey', height: 40 }}>
-                  Don't have an account?
-                  </Text>
-                <Text style={{ fontWeight: 'bold', fontSize: 15, color: 'orange', height: 40 }}>
-                  Sign up
-                  </Text>
+              <View style={styles.container, { flexDirection: 'row', width: widthDevice / 2, marginTop: '35%' }}>
+                <View>
+                  <Text style={{ fontWeight: 'bold', fontSize: 15, color: 'grey', height: 40 }}> Don't have an account? </Text>
+                </View>
+                <View>
+                  <Text style={{ fontWeight: 'bold', fontSize: 15, color: 'orange', height: 40 }}> Sign up </Text>
+                </View>
               </View>
             </View>
           </View>
@@ -99,16 +106,21 @@ const App = () => {
     </>
   );
 };
-
 const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: 'center',
+    alignContent: 'center',
+    alignItems: 'center',
+  },
   textInput: {
+    marginTop: 7,
+    marginLeft: 15,
     fontSize: 20,
     height: 40,
     color: '#1C1C1C',
     fontWeight: 'bold',
-    borderColor: '#1C1C1C',
-    width: widthDevice,
-    borderRadius: 20,
+    width: widthDevice / 1.1,
   },
   viewStyle: {
     marginLeft: '10%',
