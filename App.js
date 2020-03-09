@@ -91,7 +91,7 @@ const App = () => {
               <View style={{ marginTop: '5%' }}>
                 <Text style={{ fontWeight: 'bold', fontSize: 15, color: 'grey', height: 40 }}>Forgot your password ?</Text>
               </View>
-              <View style={styles.container, { flexDirection: 'row', width: widthDevice / 2, marginTop: '35%' }}>
+              <View style={styles.container, { flexDirection: 'row', width: widthDevice / 2, marginTop: '35%', marginRight: '-25%' }}>
                 <View>
                   <Text style={{ fontWeight: 'bold', fontSize: 15, color: 'grey', height: 40 }}> Don't have an account? </Text>
                 </View>
